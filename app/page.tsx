@@ -76,63 +76,84 @@ export default function HomePage() {
           priority
           sizes="100vw"
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="max-w-2xl">
-            <motion.p
-              className="text-xs font-bold tracking-widest uppercase text-[#6EDBB5] mb-4"
-              {...fadeUpProps(0)}
-            >
-              Eurocamping · Desde 1965
-            </motion.p>
-            <motion.h1
-              className="text-5xl md:text-7xl font-bold text-white leading-tight"
-              style={{ fontFamily: "var(--font-fraunces)" }}
-              {...fadeUpProps(0.12)}
-            >
-              Todo el outdoor
-              <br />
-              <em className="text-[#1D9E75] italic font-light">en un solo lugar.</em>
-            </motion.h1>
-            <motion.p
-              className="mt-6 text-lg text-white/85 leading-relaxed max-w-lg"
-              {...fadeUpProps(0.24)}
-            >
-              Equipamento nuevo y usado, alquiler para tu próxima aventura, y el
-              taller de reparaciones más completo de Argentina.
-            </motion.p>
-            <motion.div
-              className="mt-8 flex flex-wrap gap-4"
-              {...fadeUpProps(0.36)}
-            >
-              <Link
-                href="/comprar"
-                className="bg-[#1D9E75] text-white font-semibold px-6 py-3.5 rounded-full hover:bg-[#0F6E56] transition-colors"
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Texto */}
+            <div>
+              <motion.p
+                className="text-xs font-bold tracking-widest uppercase text-[#6EDBB5] mb-4"
+                {...fadeUpProps(0)}
               >
-                Ver productos
-              </Link>
-              <Link
-                href="/alquilar"
-                className="border border-white/40 text-white font-semibold px-6 py-3.5 rounded-full hover:bg-white/10 transition-colors"
+                Eurocamping · Desde 1965
+              </motion.p>
+              <motion.h1
+                className="text-5xl md:text-7xl font-bold text-white leading-tight"
+                style={{ fontFamily: "var(--font-fraunces)" }}
+                {...fadeUpProps(0.12)}
               >
-                Reservar alquiler
-              </Link>
-            </motion.div>
-
-            {/* Activity tags */}
-            <motion.div
-              className="mt-10 flex flex-wrap gap-2"
-              {...fadeUpProps(0.48)}
-            >
-              {activities.map((act) => (
+                Todo el outdoor
+                <br />
+                <em className="text-[#1D9E75] italic font-light">en un solo lugar.</em>
+              </motion.h1>
+              <motion.p
+                className="mt-6 text-lg text-white/85 leading-relaxed max-w-lg"
+                {...fadeUpProps(0.24)}
+              >
+                Equipamento nuevo y usado, alquiler para tu próxima aventura, y el
+                taller de reparaciones más completo de Argentina.
+              </motion.p>
+              <motion.div
+                className="mt-8 flex flex-wrap gap-4"
+                {...fadeUpProps(0.36)}
+              >
                 <Link
-                  key={act.label}
-                  href={act.href}
-                  className="flex items-center gap-1.5 text-sm bg-white/10 text-white/90 px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors"
+                  href="/comprar"
+                  className="bg-[#1D9E75] text-white font-semibold px-6 py-3.5 rounded-full hover:bg-[#0F6E56] transition-colors"
                 >
-                  <span>{act.emoji}</span>
-                  {act.label}
+                  Ver productos
                 </Link>
-              ))}
+                <Link
+                  href="/alquilar"
+                  className="border border-white/40 text-white font-semibold px-6 py-3.5 rounded-full hover:bg-white/10 transition-colors"
+                >
+                  Reservar alquiler
+                </Link>
+              </motion.div>
+
+              {/* Activity tags */}
+              <motion.div
+                className="mt-10 flex flex-wrap gap-2"
+                {...fadeUpProps(0.48)}
+              >
+                {activities.map((act) => (
+                  <Link
+                    key={act.label}
+                    href={act.href}
+                    className="flex items-center gap-1.5 text-sm bg-white/10 text-white/90 px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors"
+                  >
+                    <span>{act.emoji}</span>
+                    {act.label}
+                  </Link>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Foto persona */}
+            <motion.div
+              className="hidden lg:flex justify-center items-end"
+              initial={{ opacity: 0, x: 32 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              <div className="relative w-full max-w-sm aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+                <Image
+                  src="/images/hero/hero-persona.jpg"
+                  alt="Trekkero con campera naranja en la montaña"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 0px, 400px"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
