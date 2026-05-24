@@ -46,7 +46,7 @@ export default function SectionHeader({
         )}
       </div>
       {description && (
-        <p className="text-[#6b7280] text-base leading-relaxed max-w-xl">{description}</p>
+        <p className="text-[#374151] text-base leading-relaxed max-w-xl">{description}</p>
       )}
       {viewAllHref && centered && (
         <Link

@@ -31,7 +31,7 @@ const needCards = [
     title: "Comprar nuevo",
     description: "Equipamento de primera marca con la mejor atención especializada.",
     href: "/comprar",
-    accentColor: "#639922",
+    accentColor: "#4a7012",
     accentBg: "#EAF3DE",
   },
   {
@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="max-w-2xl">
             <motion.p
-              className="text-xs font-bold tracking-widest uppercase text-[#1D9E75] mb-4"
+              className="text-xs font-bold tracking-widest uppercase text-[#6EDBB5] mb-4"
               {...fadeUpProps(0)}
             >
               Eurocamping · Desde 1965
@@ -94,7 +94,7 @@ export default function HomePage() {
               <em className="text-[#1D9E75] italic font-light">en un solo lugar.</em>
             </motion.h1>
             <motion.p
-              className="mt-6 text-lg text-white/70 leading-relaxed max-w-lg"
+              className="mt-6 text-lg text-white/85 leading-relaxed max-w-lg"
               {...fadeUpProps(0.24)}
             >
               Equipamento nuevo y usado, alquiler para tu próxima aventura, y el
@@ -127,7 +127,7 @@ export default function HomePage() {
                 <Link
                   key={act.label}
                   href={act.href}
-                  className="flex items-center gap-1.5 text-sm bg-white/10 text-white/80 px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors"
+                  className="flex items-center gap-1.5 text-sm bg-white/10 text-white/90 px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors"
                 >
                   <span>{act.emoji}</span>
                   {act.label}
@@ -211,7 +211,7 @@ export default function HomePage() {
 
             {/* Taller */}
             <div className="bg-[#EAF3DE] rounded-3xl p-8 md:p-10 flex flex-col gap-5">
-              <span className="text-xs font-bold tracking-widest uppercase text-[#639922]">
+              <span className="text-xs font-bold tracking-widest uppercase text-[#3a5a0a]">
                 Taller ECO
               </span>
               <h2

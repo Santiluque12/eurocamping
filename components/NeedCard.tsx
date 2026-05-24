@@ -43,7 +43,7 @@ export default function NeedCard({
           >
             {title}
           </h3>
-          <p className="text-sm text-[#6b7280] leading-relaxed">{description}</p>
+          <p className="text-sm text-[#374151] leading-relaxed">{description}</p>
         </div>
         <span
           className="text-sm font-semibold mt-auto"

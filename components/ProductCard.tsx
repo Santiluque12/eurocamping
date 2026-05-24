@@ -54,14 +54,14 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.title}
         </h3>
         {product.description && (
-          <p className="text-xs text-[#6b7280] leading-relaxed flex-1">
+          <p className="text-xs text-[#374151] leading-relaxed flex-1">
             {product.description}
           </p>
         )}
         {product.price ? (
           <p className="text-base font-bold text-[#1D9E75]">{product.price}</p>
         ) : (
-          <p className="text-sm text-[#6b7280]">Consultar precio</p>
+          <p className="text-sm text-[#374151]">Consultar precio</p>
         )}
 
         {/* CTAs */}
