@@ -36,7 +36,7 @@ const footerLinks = {
     { label: "Taller ECO", href: "/taller" },
     { label: "Sucursales", href: "/nosotros#sucursales" },
   ],
-  Contenido: [
+  "Trips & Tips": [
     { label: "ECOtrips", href: "/contenido" },
     { label: "ECOtips", href: "/contenido" },
   ],

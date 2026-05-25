@@ -6,10 +6,10 @@ import { Menu, X, MessageCircle } from "lucide-react";
 import { WA_LINKS } from "@/lib/data";
 
 const navLinks = [
+  { label: "Trips & Tips", href: "/contenido" },
   { label: "Comprar", href: "/comprar" },
   { label: "Alquilar", href: "/alquilar" },
   { label: "Taller", href: "/taller" },
-  { label: "Contenido", href: "/contenido" },
 ];
 
 export default function Navbar() {
