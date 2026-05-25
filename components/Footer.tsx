@@ -26,6 +26,10 @@ function YoutubeIcon() {
 }
 
 const footerLinks = {
+  "Trips & Tips": [
+    { label: "ECOtrips", href: "/contenido" },
+    { label: "ECOtips", href: "/contenido" },
+  ],
   Tienda: [
     { label: "Productos nuevos", href: "/comprar" },
     { label: "Equipos usados", href: "/comprar/usados" },
@@ -35,10 +39,6 @@ const footerLinks = {
     { label: "Alquiler / Rental", href: "/alquilar" },
     { label: "Taller ECO", href: "/taller" },
     { label: "Sucursales", href: "/nosotros#sucursales" },
-  ],
-  "Trips & Tips": [
-    { label: "ECOtrips", href: "/contenido" },
-    { label: "ECOtips", href: "/contenido" },
   ],
   Empresa: [
     { label: "Quiénes somos", href: "/nosotros" },
