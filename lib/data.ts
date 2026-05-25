@@ -87,7 +87,7 @@ export const posts: Post[] = [
     title: "Circuito Nahuel Huapi: kayak + camping en 5 días",
     excerpt:
       "El clásico cruce de los Lagos Espejo, Correntoso y Nahuel Huapi en kayak. Ruta, campings y lo que necesitás llevar.",
-    image: "/images/posts/circuito-nahuel-huapi-kayak-5-dias.jpg",
+    image: "/images/posts/circuito-nahuel-huapi-kayak-5-dias.png",
     readTime: "8 min",
     date: "2024-11-15",
   },
@@ -97,7 +97,7 @@ export const posts: Post[] = [
     title: "Cómo elegir tu primera mochila de trekking en 2025",
     excerpt:
       "Volumen, sistema de suspensión, materiales y precio: todo lo que tenés que saber antes de comprar.",
-    image: "/images/posts/como-elegir-mochila-trekking-2025.jpg",
+    image: "/images/posts/como-elegir-mochila-trekking-2025.png",
     readTime: "5 min",
     date: "2024-10-22",
   },
@@ -107,7 +107,7 @@ export const posts: Post[] = [
     title: "Ski Patagonia: el cruce Argentina–Chile más épico",
     excerpt:
       "Desde Chapelco hasta Antillanca pasando por el Cruce Lacustre. Logística, alojamiento y equipo necesario.",
-    image: "/images/posts/ski-patagonia-argentina-chile.jpg",
+    image: "/images/posts/ski-patagonia-argentina-chile.png",
     readTime: "10 min",
     date: "2024-09-05",
   },
@@ -117,7 +117,7 @@ export const posts: Post[] = [
     title: "5 claves para armar un campamento base eficiente",
     excerpt:
       "Lugar, orientación de la carpa, cocina y organización del espacio. Trucos del taller ECO.",
-    image: "/images/posts/armado-campamento-base-trekking.jpg",
+    image: "/images/posts/armado-campamento-base-trekking.png",
     readTime: "4 min",
     date: "2024-08-18",
   },
