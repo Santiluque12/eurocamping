@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     "Alquilá kayaks, carpas, skis, snowboards, mochilas e indumentaria con el servicio Fastrack de Eurocamping. El precio más bajo garantizado.",
 };
 
-const duraciones = ["Día", "Fin de semana", "4 días", "Semana"];
+// headers for each category
+const HDR_STD = ["Día", "Fin de semana", "4 días", "Semana", "Quincena"];
+const HDR_SKI = ["Día", "3 días", "4 días", "Semana"];
 
 type PrecioItem = {
   name: string;
@@ -22,32 +24,35 @@ type SubCat = {
   items: PrecioItem[];
 };
 
+// ─── Indumentaria & Accesorios (HDR_STD — 5 cols) ────────────────────────────
 const indumentariaItems: PrecioItem[] = [
-  { name: "Equipo 5 piezas (campera, pantalón, botas après-ski, guantes, antiparras)", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Equipo 4 piezas", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Campera de ski", precios: ["$8.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Pantalón de ski", precios: ["$6.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Guantes de ski", precios: ["$2.500", "Consultar", "Consultar", "Consultar"] },
-  { name: "Antiparras", precios: ["$3.500", "Consultar", "Consultar", "Consultar"] },
-  { name: "Botas après-ski", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Medias de ski", precios: ["$1.500", "Consultar", "Consultar", "Consultar"] },
-  { name: "Crampones de hielo", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Trineos", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Raquetas de nieve", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Polainas", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Botas de trekking", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Pantalón de trekking", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Gorro / Pasamontañas", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
+  { name: "Equipo 5 piezas (campera, pantalón, botas après-ski, guantes, antiparras)", precios: ["$50.000", "$150.000", "$200.000", "$240.000", "$350.000"] },
+  { name: "Equipo 4 piezas", precios: ["$40.000", "$120.000", "$160.000", "$200.000", "$300.000"] },
+  { name: "Botas Après-ski", precios: ["$15.000", "$30.000", "$40.000", "$60.000", "$80.000"] },
+  { name: "Campera de ski", precios: ["$15.000", "$30.000", "$40.000", "$60.000", "$80.000"] },
+  { name: "Pantalón de ski", precios: ["$15.000", "$30.000", "$40.000", "$60.000", "$80.000"] },
+  { name: "Conjunto entero (mameluco)", precios: ["$15.000", "$30.000", "$40.000", "$60.000", "$80.000"] },
+  { name: "Guantes", precios: ["$8.000", "$20.000", "$30.000", "$40.000", "$40.000"] },
+  { name: "Antiparras", precios: ["$8.000", "$20.000", "$30.000", "$40.000", "$40.000"] },
+  { name: "Crampones de hielo (Ice Grip)", precios: ["$1.000", "$3.000", "$4.000", "$5.000", "$7.000"] },
+  { name: "Trineo", precios: ["$1.000", "$3.000", "$4.000", "$5.000", "$7.000"] },
+  { name: "Pala de nieve", precios: ["$5.000", "$15.000", "$25.000", "$40.000", "$50.000"] },
+  { name: "Kit rescate de avalancha", precios: ["$30.000", "$60.000", "$80.000", "$150.000", "$200.000"] },
+  { name: "Raquetas de nieve", precios: ["$10.000", "$30.000", "$40.000", "$60.000", "$80.000"] },
+  { name: "Polainas", precios: ["$5.000", "$15.000", "$25.000", "$40.000", "$45.000"] },
+  { name: "Botas de trekking", precios: ["$10.000", "$30.000", "$40.000", "$60.000", "$80.000"] },
+  { name: "Pantalón de trekking", precios: ["$10.000", "$30.000", "$40.000", "$60.000", "$80.000"] },
+  { name: "Cubre pantalón", precios: ["$10.000", "$30.000", "$40.000", "$60.000", "$80.000"] },
+  { name: "Sombrero / Gorro", precios: ["$2.000", "$6.000", "$10.000", "$15.000", "$15.000"] },
 ];
 
+// ─── Ski & Snowboard (HDR_SKI — 4 cols) ──────────────────────────────────────
 const skiItems: PrecioItem[] = [
-  { name: "Set completo ski (tablas + fijaciones + bastones)", precios: ["$22.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Esquís + fijaciones", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Botas de ski", precios: ["$8.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Set snowboard completo", precios: ["$20.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Snowboard + fijaciones", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Botas de snowboard", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Casco", precios: ["$4.000", "Consultar", "Consultar", "Consultar"] },
+  { name: "Equipo completo", precios: ["$10.000", "$30.000", "$40.000", "$50.000"] },
+  { name: "Esquís + fijaciones", precios: ["$5.000", "$15.000", "$20.000", "$30.000"] },
+  { name: "Snowboard + fijaciones", precios: ["$5.000", "$15.000", "$20.000", "$30.000"] },
+  { name: "Botas (ski o snowboard)", precios: ["$5.000", "$15.000", "$20.000", "$30.000"] },
+  { name: "Casco", precios: ["$5.000", "$15.000", "$20.000", "$30.000"] },
 ];
 
 const resorts = [
@@ -60,72 +65,82 @@ const resorts = [
   "Las Pendientes (Castor)",
 ];
 
+// ─── Camping (HDR_STD — 5 cols) ──────────────────────────────────────────────
 const campingSubcats: SubCat[] = [
   {
     name: "Carpas",
     items: [
-      { name: "Carpa 2 personas", precios: ["$10.000", "Consultar", "Consultar", "Consultar"] },
-      { name: "Carpa 4 personas", precios: ["$14.000", "Consultar", "Consultar", "Consultar"] },
-      { name: "Carpa 5-6 personas", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Carpa comedor / toldo", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Carpa alta montaña", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
+      { name: "Carpa 1-4 PAX", precios: ["$30.000", "$45.000", "$60.000", "$90.000", "$120.000"] },
+      { name: "Carpa 5-6 PAX", precios: ["$40.000", "$60.000", "$90.000", "$120.000", "$150.000"] },
+      { name: "Carpa comedor / toldo", precios: ["$40.000", "$60.000", "$90.000", "$120.000", "$150.000"] },
     ],
   },
   {
     name: "Abrigo & Descanso",
     items: [
-      { name: "Bolsa de dormir 2 estaciones", precios: ["$5.000", "Consultar", "Consultar", "Consultar"] },
-      { name: "Bolsa de dormir 3 estaciones", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Bolsa de dormir alta montaña", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Liner / Sábana interior", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Aislante (foam)", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Colchoneta autoinflable", precios: ["$3.500", "Consultar", "Consultar", "Consultar"] },
-      { name: "Colchón de aire simple", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Colchón de aire doble", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
+      { name: "Bolsa de dormir 2 estaciones", precios: ["$5.000", "$10.000", "$10.000", "$10.000", "$10.000"] },
+      { name: "Bolsa de dormir 3 estaciones", precios: ["$15.000", "$20.000", "$30.000", "$40.000", "$50.000"] },
+      { name: "Bolsa de dormir alta montaña", precios: ["$30.000", "$40.000", "$60.000", "$80.000", "$100.000"] },
+      { name: "Liner / sábana interior", precios: ["$10.000", "$15.000", "$20.000", "$20.000", "$20.000"] },
+      { name: "Aislante (foam)", precios: ["$5.000", "$5.000", "$5.000", "$5.000", "$5.000"] },
+      { name: "Aislante alta montaña", precios: ["$10.000", "$15.000", "$15.000", "$20.000", "$20.000"] },
+      { name: "Colchoneta autoinflable", precios: ["$15.000", "$20.000", "$25.000", "$30.000", "$40.000"] },
+      { name: "Colchón inflable simple", precios: ["$10.000", "$10.000", "$15.000", "$15.000", "$20.000"] },
+      { name: "Colchón inflable doble", precios: ["$15.000", "$15.000", "$20.000", "$20.000", "$30.000"] },
     ],
   },
   {
     name: "Mochilas & Transporte",
     items: [
-      { name: "Mochila trekking 60L", precios: ["$6.000", "Consultar", "Consultar", "Consultar"] },
-      { name: "Mochila hasta 85L", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Mochila de hidratación", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Portabebés / mochila porta-niño", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Bastones de trekking", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
+      { name: "Mochila 10-85L", precios: ["$15.000", "$20.000", "$30.000", "$40.000", "$50.000"] },
+      { name: "Mochila porta bebé", precios: ["$15.000", "$20.000", "$30.000", "$40.000", "$50.000"] },
+      { name: "Mochila de hidratación", precios: ["$10.000", "$15.000", "$20.000", "$20.000", "$30.000"] },
+      { name: "Bastones de trekking (par)", precios: ["$10.000", "$15.000", "$20.000", "$20.000", "$20.000"] },
     ],
   },
   {
     name: "Accesorios & Equipamiento",
     items: [
-      { name: "Linterna frontal", precios: ["$1.500", "Consultar", "Consultar", "Consultar"] },
-      { name: "Silla de camping", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Mesa de camping", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Utensilios de cocina", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Calentador a gas", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Hielera / heladera portátil", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Termo", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Binoculares / Telescopio", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-      { name: "Tanque de agua", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
+      { name: "Silla 3 en 1", precios: ["$10.000", "$15.000", "$15.000", "$20.000", "$30.000"] },
+      { name: "Mesa 4 PAX", precios: ["$15.000", "$20.000", "$30.000", "$40.000", "$50.000"] },
+      { name: "Marmita / set de cocina", precios: ["$10.000", "$15.000", "$20.000", "$25.000", "$30.000"] },
+      { name: "Calentador a gas", precios: ["$10.000", "$15.000", "$20.000", "$25.000", "$30.000"] },
+      { name: "Linterna frontal", precios: ["$10.000", "$15.000", "$20.000", "$25.000", "$30.000"] },
+      { name: "Conservadora 36-48QT", precios: ["$10.000", "$15.000", "$20.000", "$25.000", "$30.000"] },
+      { name: "Termo 7.6L", precios: ["$10.000", "$15.000", "$20.000", "$25.000", "$30.000"] },
+      { name: "Parrilla enrollable", precios: ["$10.000", "$15.000", "$20.000", "$20.000", "$20.000"] },
+      { name: "Binoculares", precios: ["$10.000", "$15.000", "$20.000", "$20.000", "$30.000"] },
+      { name: "Telescopio", precios: ["$10.000", "$15.000", "$20.000", "$20.000", "$30.000"] },
+      { name: "Tanque de agua", precios: ["$10.000", "$15.000", "$20.000", "$20.000", "$30.000"] },
+      { name: "Inflador 5000cc", precios: ["$5.000", "$10.000", "$10.000", "$15.000", "$15.000"] },
+      { name: "Inflador eléctrico", precios: ["$10.000", "$15.000", "$20.000", "$25.000", "$30.000"] },
     ],
   },
 ];
 
+// ─── Náutica (HDR_STD — 5 cols) ──────────────────────────────────────────────
 const nauticaItems: PrecioItem[] = [
-  { name: "Kayak simple", precios: ["$15.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Kayak doble", precios: ["$18.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Kayak de mar simple", precios: ["$20.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Kayak rígido", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Paddle Surf / SUP rígido", precios: ["$12.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Paddle Surf / SUP inflable", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Tabla de surf", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Skimboard", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Packraft", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Chaleco salvavidas", precios: ["Incluido", null, null, null] },
-  { name: "Transportín para kayak", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Traje de neoprene", precios: ["$9.000", "Consultar", "Consultar", "Consultar"] },
-  { name: "Escarpines / botas de agua", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Snorkel + aletas", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
-  { name: "Funda impermeable para celular", precios: ["Consultar", "Consultar", "Consultar", "Consultar"] },
+  { name: "Kayak simple + remo", precios: ["$8.000", "$12.000", "$20.000", "$30.000", "$40.000"] },
+  { name: "Kayak doble + 2 remos", precios: ["$12.000", "$20.000", "$30.000", "$50.000", "$60.000"] },
+  { name: "Kayak inflable simple + remo", precios: ["$20.000", "$30.000", "$60.000", "$90.000", "$150.000"] },
+  { name: "Kayak inflable doble + 2 remos", precios: ["$30.000", "$45.000", "$90.000", "$120.000", "$200.000"] },
+  { name: "Stand Up Paddle rígido", precios: ["$12.000", "$20.000", "$30.000", "$50.000", "$60.000"] },
+  { name: "Stand Up Paddle inflable", precios: ["$40.000", "$60.000", "$80.000", "$150.000", "$190.000"] },
+  { name: "Surf Board (softboard)", precios: ["$12.000", "$20.000", "$30.000", "$50.000", "$60.000"] },
+  { name: "Skimboard", precios: ["$8.000", "$12.000", "$20.000", "$30.000", "$30.000"] },
+  { name: "Packraft simple + remo", precios: ["$12.000", "$20.000", "$30.000", "$50.000", "$80.000"] },
+  { name: "Packraft doble + 2 remos", precios: ["$16.000", "$30.000", "$40.000", "$70.000", "$100.000"] },
+  { name: "Chaleco salvavidas", precios: ["$10.000", "$10.000", "$10.000", "$15.000", "$20.000"] },
+  { name: "Porta kayak", precios: ["$10.000", "$10.000", "$10.000", "$15.000", "$20.000"] },
+  { name: "Carrito para kayak", precios: ["$10.000", "$10.000", "$10.000", "$15.000", "$20.000"] },
+  { name: "Remolque", precios: ["$25.000", "$30.000", "$40.000", "$70.000", "$100.000"] },
+  { name: "Traje de neoprene", precios: ["$15.000", "$20.000", "$30.000", "$40.000", "$60.000"] },
+  { name: "Botas náuticas", precios: ["$10.000", "$10.000", "$15.000", "$20.000", "$30.000"] },
+  { name: "Funda estanca para teléfono", precios: ["$10.000", "$10.000", "$15.000", "$20.000", "$30.000"] },
+  { name: "Snorkel", precios: ["$5.000", "$10.000", "$10.000", "$10.000", "$15.000"] },
+  { name: "Patas de rana (aletas)", precios: ["$5.000", "$10.000", "$10.000", "$10.000", "$15.000"] },
+  { name: "Inflador 5000cc", precios: ["$5.000", "$10.000", "$10.000", "$10.000", "$15.000"] },
+  { name: "Inflador eléctrico", precios: ["$10.000", "$20.000", "$20.000", "$30.000", "$30.000"] },
 ];
 
 const ventajas = [
@@ -141,40 +156,37 @@ const ventajas = [
   "Créditos para futuras compras o alquileres",
 ];
 
-// Reusable price table
-function PriceTable({ items }: { items: PrecioItem[] }) {
+// ─── Components ───────────────────────────────────────────────────────────────
+
+function PriceTable({ items, headers }: { items: PrecioItem[]; headers: string[] }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-[#e5e7eb]">
+    <div className="overflow-x-auto rounded-xl border border-[#333] bg-[#1A1A1A]">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-[#FFF3DC]">
-            <th className="text-left py-3 px-5 font-semibold text-[#1A1A1A] min-w-[220px]">
+          <tr className="bg-[#242424] border-b border-[#333]">
+            <th className="text-left py-3 px-5 font-semibold text-white/60 min-w-[220px]">
               Equipo
             </th>
-            {duraciones.map((d) => (
+            {headers.map((h) => (
               <th
-                key={d}
-                className="text-center py-3 px-4 font-semibold text-[#1A1A1A] whitespace-nowrap"
+                key={h}
+                className="text-center py-3 px-4 font-semibold text-[#F5A623] whitespace-nowrap"
               >
-                {d}
+                {h}
               </th>
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-[#f3f4f6]">
+        <tbody className="divide-y divide-[#2a2a2a]">
           {items.map((item) => (
-            <tr key={item.name} className="hover:bg-[#fafafa] transition-colors">
-              <td className="py-3 px-5 text-[#1A1A1A]">{item.name}</td>
+            <tr key={item.name} className="hover:bg-[#222] transition-colors">
+              <td className="py-3 px-5 text-white/80">{item.name}</td>
               {item.precios.map((p, i) => (
                 <td
                   key={i}
                   className={`py-3 px-4 text-center whitespace-nowrap ${
                     p === null
-                      ? "text-[#d1d5db]"
-                      : p === "Consultar"
-                      ? "text-[#9ca3af] text-xs"
-                      : p === "Incluido"
-                      ? "text-green-600 font-semibold"
+                      ? "text-white/20"
                       : "text-[#F5A623] font-semibold"
                   }`}
                 >
@@ -254,36 +266,14 @@ export default function AlquilarPage() {
         </div>
       </nav>
 
-      {/* Ventajas */}
-      <section className="py-16 bg-[#f9fafb]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Por qué elegir ECOrental"
-            title="Todo incluido,"
-            titleItalic="nada complicado"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-8">
-            {ventajas.map((v) => (
-              <div
-                key={v}
-                className="flex items-start gap-3 bg-white rounded-xl p-4 border border-[#e5e7eb]"
-              >
-                <Check size={18} className="text-[#F5A623] shrink-0 mt-0.5" />
-                <span className="text-sm text-[#1a1a1a]">{v}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Tarifario note */}
       <div className="bg-[#FFF8ED] border-y border-[#F5A623]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-3">
           <Info size={16} className="text-[#F5A623] shrink-0" />
           <p className="text-sm text-[#6b7280]">
-            Precios orientativos en pesos. Fin de semana: viernes a domingo.{" "}
+            Precios en pesos argentinos. Fin de semana: viernes a domingo.{" "}
             <strong className="text-[#1A1A1A]">20% OFF pagando en efectivo con 30 días de anticipación.</strong>{" "}
-            Confirmá disponibilidad y precio final por WhatsApp.
+            Precios sujetos a actualización por temporada. Confirmá disponibilidad por WhatsApp.
           </p>
         </div>
       </div>
@@ -298,11 +288,8 @@ export default function AlquilarPage() {
             description="Equipos y prendas para nieve, trekking y actividades de montaña."
           />
           <div className="mt-10">
-            <PriceTable items={indumentariaItems} />
+            <PriceTable items={indumentariaItems} headers={HDR_STD} />
           </div>
-          <p className="mt-4 text-xs text-[#9ca3af]">
-            * Las prendas de neoprene también se listan en la sección Náutica.
-          </p>
         </div>
       </section>
 
@@ -316,7 +303,7 @@ export default function AlquilarPage() {
             description="Tablas, botas, cascos y equipos completos para todos los niveles."
           />
           <div className="mt-10">
-            <PriceTable items={skiItems} />
+            <PriceTable items={skiItems} headers={HDR_SKI} />
           </div>
 
           {/* Resort pricing note */}
@@ -328,8 +315,8 @@ export default function AlquilarPage() {
               Tarifas por centro de ski
             </p>
             <p className="text-sm text-[#6b7280] mb-4">
-              Contamos con precios específicos pactados con los centros de ski. Consultá el tarifario
-              para tu destino:
+              Contamos con precios específicos pactados para cada centro de ski. Consultá el
+              tarifario para tu destino:
             </p>
             <div className="flex flex-wrap gap-2">
               {resorts.map((r) => (
@@ -372,7 +359,7 @@ export default function AlquilarPage() {
                 >
                   {sub.name}
                 </h3>
-                <PriceTable items={sub.items} />
+                <PriceTable items={sub.items} headers={HDR_STD} />
               </div>
             ))}
           </div>
@@ -389,7 +376,7 @@ export default function AlquilarPage() {
             description="Kayaks, SUP, surf, packrafts y equipamiento acuático completo."
           />
           <div className="mt-10">
-            <PriceTable items={nauticaItems} />
+            <PriceTable items={nauticaItems} headers={HDR_STD} />
           </div>
           <p className="mt-4 text-xs text-[#9ca3af]">
             * El traslado de kayaks y carpas de gran tamaño tiene costo adicional. Consultá por envío a destino.
@@ -564,6 +551,28 @@ export default function AlquilarPage() {
                   {step.title}
                 </h3>
                 <p className="text-sm text-[#6b7280] leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ventajas */}
+      <section className="py-16 bg-[#f9fafb]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Por qué elegir ECOrental"
+            title="Todo incluido,"
+            titleItalic="nada complicado"
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-8">
+            {ventajas.map((v) => (
+              <div
+                key={v}
+                className="flex items-start gap-3 bg-white rounded-xl p-4 border border-[#e5e7eb]"
+              >
+                <Check size={18} className="text-[#F5A623] shrink-0 mt-0.5" />
+                <span className="text-sm text-[#1a1a1a]">{v}</span>
               </div>
             ))}
           </div>
