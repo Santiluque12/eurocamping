@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { WA_LINKS } from "@/lib/data";
 
 const navLinks = [
-  { label: "Trips & Tips", href: "/contenido" },
-  { label: "Comprar", href: "/comprar" },
   { label: "Alquilar", href: "/alquilar" },
+  { label: "Comprar", href: "/comprar" },
+  { label: "Trips & Tips", href: "/contenido" },
   { label: "Taller", href: "/taller" },
 ];
 
@@ -19,15 +20,15 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white border-b border-[#e5e7eb]">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1 shrink-0">
-          <span
-            className="font-display text-2xl font-bold tracking-tight text-[#1a1a1a]"
-            style={{ fontFamily: "var(--font-fraunces)" }}
-          >
-            EC
-            <span className="text-[#1D9E75]">O</span>
-            nline
-          </span>
+        <Link href="/" className="flex items-center shrink-0">
+          <Image
+            src="/logo-eco-black.png"
+            alt="Eurocamping Outdoor"
+            width={108}
+            height={36}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
 
         {/* Desktop links */}
@@ -36,7 +37,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-[#6b7280] hover:text-[#1a1a1a] transition-colors"
+              className="text-[15px] font-semibold text-[#1a1a1a] hover:text-[#F5A623] transition-colors tracking-tight"
             >
               {link.label}
             </Link>
@@ -55,7 +56,7 @@ export default function Navbar() {
             href={WA_LINKS.general}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#1D9E75] text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-[#0F6E56] transition-colors"
+            className="flex items-center gap-2 bg-[#F5A623] text-[#1A1A1A] text-sm font-semibold px-4 py-2 rounded-full hover:bg-[#E08B00] transition-colors"
           >
             <MessageCircle size={16} />
             Escribinos
@@ -80,7 +81,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-2xl font-medium text-[#1a1a1a] py-2 border-b border-[#e5e7eb]"
+              className="text-2xl font-bold text-[#1a1a1a] py-2 border-b border-[#e5e7eb] tracking-tight"
               style={{ fontFamily: "var(--font-fraunces)" }}
             >
               {link.label}
@@ -89,7 +90,7 @@ export default function Navbar() {
           <Link
             href="/nosotros"
             onClick={() => setOpen(false)}
-            className="text-2xl font-medium text-[#1a1a1a] py-2 border-b border-[#e5e7eb]"
+            className="text-2xl font-bold text-[#1a1a1a] py-2 border-b border-[#e5e7eb] tracking-tight"
             style={{ fontFamily: "var(--font-fraunces)" }}
           >
             Nosotros
@@ -98,7 +99,7 @@ export default function Navbar() {
             href={WA_LINKS.general}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-[#1D9E75] text-white text-lg font-semibold px-6 py-4 rounded-full mt-4"
+            className="flex items-center justify-center gap-2 bg-[#F5A623] text-[#1A1A1A] text-lg font-semibold px-6 py-4 rounded-full mt-4"
           >
             <MessageCircle size={20} />
             Escribinos por WhatsApp
