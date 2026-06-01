@@ -22,7 +22,7 @@ export default function WhatsAppBanner({
   buttonLabel = "Escribir por WhatsApp",
 }: WhatsAppBannerProps) {
   return (
-    <section id="whatsapp" className="bg-[#E1F5EE] py-12">
+    <section id="whatsapp" className="bg-[#FFF3DC] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
@@ -31,12 +31,12 @@ export default function WhatsAppBanner({
             </div>
             <div>
               <p
-                className="text-xl font-bold text-[#085041]"
+                className="text-xl font-bold text-[#1A1A1A] tracking-tight"
                 style={{ fontFamily: "var(--font-fraunces)" }}
               >
                 {title}
               </p>
-              <p className="text-sm text-[#0F6E56]">{subtitle}</p>
+              <p className="text-sm text-[#7A5A00]">{subtitle}</p>
             </div>
           </div>
           <a

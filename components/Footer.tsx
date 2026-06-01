@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail } from "lucide-react";
 
 function InstagramIcon() {
@@ -48,18 +49,19 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#085041] text-white">
+    <footer className="bg-[#1A1A1A] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/">
-              <span
-                className="font-display text-3xl font-bold text-white"
-                style={{ fontFamily: "var(--font-fraunces)" }}
-              >
-                EC<span className="text-[#1D9E75]">O</span>nline
-              </span>
+              <Image
+                src="/logo-eco-color.png"
+                alt="Eurocamping Outdoor"
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="mt-3 text-sm text-white/60 leading-relaxed">
               Todo el outdoor en un solo lugar.
@@ -72,7 +74,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-white/60 hover:text-white transition-colors"
+                className="text-white/60 hover:text-[#F5A623] transition-colors"
               >
                 <InstagramIcon />
               </a>
@@ -81,7 +83,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="text-white/60 hover:text-white transition-colors"
+                className="text-white/60 hover:text-[#F5A623] transition-colors"
               >
                 <FacebookIcon />
               </a>
@@ -90,14 +92,14 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="text-white/60 hover:text-white transition-colors"
+                className="text-white/60 hover:text-[#F5A623] transition-colors"
               >
                 <YoutubeIcon />
               </a>
               <a
                 href="mailto:info@eurocampingonline.com.ar"
                 aria-label="Email"
-                className="text-white/60 hover:text-white transition-colors"
+                className="text-white/60 hover:text-[#F5A623] transition-colors"
               >
                 <Mail size={20} />
               </a>

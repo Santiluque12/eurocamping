@@ -31,7 +31,7 @@ export default async function PostPage({ params }: Props) {
   const related = posts.filter((p) => p.slug !== slug).slice(0, 2);
   const categoryStyle =
     post.category === "ECOtrip"
-      ? { bg: "#E1F5EE", text: "#0F6E56" }
+      ? { bg: "#FFF3DC", text: "#E08B00" }
       : { bg: "#E6F1FB", text: "#2563A8" };
 
   return (
@@ -39,7 +39,7 @@ export default async function PostPage({ params }: Props) {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/contenido"
-          className="flex items-center gap-2 text-sm text-[#6b7280] hover:text-[#1D9E75] transition-colors mb-8"
+          className="flex items-center gap-2 text-sm text-[#6b7280] hover:text-[#F5A623] transition-colors mb-8"
         >
           <ArrowLeft size={16} />
           Volver al contenido
@@ -112,7 +112,7 @@ export default async function PostPage({ params }: Props) {
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                   </div>
-                  <p className="font-semibold text-[#1a1a1a] group-hover:text-[#1D9E75] transition-colors text-sm">
+                  <p className="font-semibold text-[#1a1a1a] group-hover:text-[#F5A623] transition-colors text-sm">
                     {p.title}
                   </p>
                 </Link>

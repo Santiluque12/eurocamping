@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ExternalLink, MessageCircle, ShoppingCart } from "lucide-react";
+import { MessageCircle, ShoppingCart } from "lucide-react";
 import type { Product } from "@/types";
 import { buildWALink } from "@/lib/data";
 
@@ -10,7 +10,7 @@ const typeBadge: Record<
   Product["type"],
   { label: string; bg: string; text: string }
 > = {
-  nuevo: { label: "Nuevo", bg: "#EAF3DE", text: "#639922" },
+  nuevo: { label: "Nuevo", bg: "#FFF3DC", text: "#E08B00" },
   usado: { label: "Revisado ECO", bg: "#FAEEDA", text: "#C47A10" },
   rental: { label: "Alquiler", bg: "#E6F1FB", text: "#2563A8" },
 };
@@ -59,7 +59,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </p>
         )}
         {product.price ? (
-          <p className="text-base font-bold text-[#1D9E75]">{product.price}</p>
+          <p className="text-base font-bold text-[#F5A623]">{product.price}</p>
         ) : (
           <p className="text-sm text-[#374151]">Consultar precio</p>
         )}
@@ -70,7 +70,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-1.5 bg-[#1D9E75] text-white text-xs font-semibold py-2.5 px-3 rounded-xl hover:bg-[#0F6E56] transition-colors"
+            className="flex-1 flex items-center justify-center gap-1.5 bg-[#F5A623] text-[#1A1A1A] text-xs font-semibold py-2.5 px-3 rounded-xl hover:bg-[#E08B00] transition-colors"
           >
             <MessageCircle size={14} />
             Consultar

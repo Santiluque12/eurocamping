@@ -18,8 +18,8 @@ export default function NeedCard({
   title,
   description,
   href,
-  accentColor = "#1D9E75",
-  accentBg = "#E1F5EE",
+  accentColor = "#F5A623",
+  accentBg = "#FFF3DC",
 }: NeedCardProps) {
   return (
     <motion.div
@@ -38,7 +38,7 @@ export default function NeedCard({
         </div>
         <div>
           <h3
-            className="font-bold text-lg text-[#1a1a1a] mb-1 group-hover:text-[#1D9E75] transition-colors"
+            className="font-bold text-lg text-[#1a1a1a] mb-1 group-hover:text-[#F5A623] transition-colors tracking-tight"
             style={{ fontFamily: "var(--font-fraunces)" }}
           >
             {title}

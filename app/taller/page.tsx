@@ -92,7 +92,7 @@ export default function TallerPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-[#3a5a0a] py-20 overflow-hidden">
+      <section className="relative bg-[#1A1A1A] py-20 overflow-hidden">
         <Image
           src="/images/hero/taller.jpg"
           alt="Taller de equipos outdoor"
@@ -101,16 +101,16 @@ export default function TallerPage() {
           sizes="100vw"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#87c341] mb-3">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#F5A623] mb-3">
             Taller ECO
           </p>
           <h1
-            className="text-5xl md:text-6xl font-bold text-white leading-tight"
+            className="text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight"
             style={{ fontFamily: "var(--font-fraunces)" }}
           >
             Más de 60 años
             <br />
-            <em className="italic font-light text-[#a8d959]">reparando aventuras.</em>
+            <em className="not-italic font-light text-[#F5A623]">reparando aventuras</em>
           </h1>
           <p className="mt-4 text-lg text-white/75 max-w-xl leading-relaxed">
             El taller especializado en equipos outdoor más completo de Argentina.
@@ -121,7 +121,7 @@ export default function TallerPage() {
               href={WA_LINKS.taller}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white text-[#3a5a0a] font-bold px-6 py-3.5 rounded-full hover:bg-[#EAF3DE] transition-colors"
+              className="flex items-center gap-2 bg-[#F5A623] text-[#1A1A1A] font-bold px-6 py-3.5 rounded-full hover:bg-[#E08B00] transition-colors"
             >
               <MessageCircle size={18} />
               Pedir turno
@@ -135,7 +135,7 @@ export default function TallerPage() {
                 key={info.label}
                 className="flex items-center gap-2 bg-white/10 text-white/80 text-sm px-4 py-2 rounded-full"
               >
-                <info.icon size={14} className="text-[#a8d959]" />
+                <info.icon size={14} className="text-[#F5A623]" />
                 <span>
                   <span className="font-semibold">{info.label}:</span> {info.value}
                 </span>
@@ -146,14 +146,14 @@ export default function TallerPage() {
       </section>
 
       {/* Descuentos y condiciones */}
-      <section className="py-12 bg-[#EAF3DE]">
+      <section className="py-12 bg-[#FFF3DC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               {
                 label: "20% OFF",
                 desc: "Pagando en efectivo del 1 Nov al 30 Abr. Sé previsor y ahorrá.",
-                color: "#639922",
+                color: "#F5A623",
               },
               {
                 label: "Servicio Express",
@@ -163,7 +163,7 @@ export default function TallerPage() {
               {
                 label: "Guardería",
                 desc: "Pasados los 15 días del trabajo terminado, se cobra guardado.",
-                color: "#1D9E75",
+                color: "#3D3D3D",
               },
             ].map((item) => (
               <div
@@ -171,7 +171,7 @@ export default function TallerPage() {
                 className="bg-white rounded-2xl p-6 border border-[#e5e7eb]"
               >
                 <p
-                  className="text-xl font-bold mb-2"
+                  className="text-xl font-bold mb-2 tracking-tight"
                   style={{
                     color: item.color,
                     fontFamily: "var(--font-fraunces)",
@@ -204,7 +204,7 @@ export default function TallerPage() {
                 <div className="bg-[#f9fafb] px-6 py-4 flex items-center gap-3 border-b border-[#e5e7eb]">
                   <span className="text-2xl">{service.icon}</span>
                   <h3
-                    className="font-bold text-[#1a1a1a]"
+                    className="font-bold text-[#1a1a1a] tracking-tight"
                     style={{ fontFamily: "var(--font-fraunces)" }}
                   >
                     {service.category}
@@ -213,7 +213,7 @@ export default function TallerPage() {
                 <ul className="p-4 space-y-2">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-[#1a1a1a]">
-                      <Check size={14} className="text-[#1D9E75] mt-0.5 shrink-0" />
+                      <Check size={14} className="text-[#F5A623] mt-0.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -264,10 +264,10 @@ export default function TallerPage() {
                 key={tarifa.season}
                 className="border border-[#e5e7eb] rounded-2xl overflow-hidden bg-white"
               >
-                <div className="bg-[#E1F5EE] px-6 py-4 flex items-center gap-3">
+                <div className="bg-[#FFF3DC] px-6 py-4 flex items-center gap-3">
                   <span className="text-2xl">{tarifa.emoji}</span>
                   <h3
-                    className="font-bold text-lg text-[#085041]"
+                    className="font-bold text-lg text-[#1A1A1A] tracking-tight"
                     style={{ fontFamily: "var(--font-fraunces)" }}
                   >
                     {tarifa.season}
@@ -280,7 +280,7 @@ export default function TallerPage() {
                       className="flex justify-between items-center px-6 py-3 gap-4"
                     >
                       <span className="text-sm text-[#1a1a1a]">{item.name}</span>
-                      <span className="text-sm font-semibold text-[#1D9E75] shrink-0">
+                      <span className="text-sm font-semibold text-[#F5A623] shrink-0">
                         {item.price}
                       </span>
                     </div>

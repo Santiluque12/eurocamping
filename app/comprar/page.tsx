@@ -20,16 +20,16 @@ export default function ComprarPage() {
     <>
       <section className="bg-[#f9fafb] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#1D9E75] mb-3">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#F5A623] mb-3">
             Catálogo ECO
           </p>
           <h1
-            className="text-5xl md:text-6xl font-bold text-[#1a1a1a] leading-tight mb-4"
+            className="text-5xl md:text-6xl font-bold text-[#1a1a1a] leading-tight mb-4 tracking-tight"
             style={{ fontFamily: "var(--font-fraunces)" }}
           >
             Equipate para
             <br />
-            <em className="text-[#1D9E75] italic font-light">tu próxima aventura.</em>
+            <em className="text-[#F5A623] not-italic font-light">tu próxima aventura</em>
           </h1>
           <p className="text-lg text-[#6b7280] max-w-xl">
             Productos nuevos, equipos usados revisados por nuestro taller, y
@@ -38,7 +38,7 @@ export default function ComprarPage() {
 
           {/* Type filters */}
           <div className="flex gap-3 mt-8 flex-wrap">
-            <span className="flex items-center gap-1.5 text-sm bg-[#EAF3DE] text-[#639922] font-semibold px-4 py-2 rounded-full">
+            <span className="flex items-center gap-1.5 text-sm bg-[#FFF3DC] text-[#F5A623] font-semibold px-4 py-2 rounded-full">
               ● Nuevo
             </span>
             <span className="flex items-center gap-1.5 text-sm bg-[#FAEEDA] text-[#C47A10] font-semibold px-4 py-2 rounded-full">
@@ -58,7 +58,7 @@ export default function ComprarPage() {
             <SectionHeader
               eyebrow="Productos nuevos"
               title="Directo de"
-              titleItalic="primera línea."
+              titleItalic="primera línea"
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
               {nuevos.map((p) => (
@@ -76,7 +76,7 @@ export default function ComprarPage() {
             <SectionHeader
               eyebrow="Revisados ECO"
               title="Equipos usados,"
-              titleItalic="calidad garantizada."
+              titleItalic="calidad garantizada"
               description="Cada equipo pasa por nuestro taller antes de la venta. La mitad del precio, el doble de confianza."
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -95,7 +95,7 @@ export default function ComprarPage() {
             <SectionHeader
               eyebrow="Disponibles en alquiler"
               title="¿No querés comprarlo?"
-              titleItalic="Alquilalo."
+              titleItalic="Alquilalo"
               viewAllHref="/alquilar"
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -108,18 +108,18 @@ export default function ComprarPage() {
       )}
 
       {/* Externo */}
-      <section className="py-14 bg-[#E1F5EE]">
+      <section className="py-14 bg-[#FFF3DC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#0F6E56] mb-3">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#E08B00] mb-3">
             También en
           </p>
           <h2
-            className="text-3xl font-bold text-[#085041] mb-4"
+            className="text-3xl font-bold text-[#1A1A1A] mb-4 tracking-tight"
             style={{ fontFamily: "var(--font-fraunces)" }}
           >
             Encontranos en MercadoLibre y Kalon Sports
           </h2>
-          <p className="text-[#0F6E56] mb-6 max-w-lg mx-auto">
+          <p className="text-[#7A5A00] mb-6 max-w-lg mx-auto">
             Nuestro catálogo completo también está disponible en nuestras tiendas
             oficiales. Comprá con la garantía de Eurocamping.
           </p>
@@ -134,7 +134,7 @@ export default function ComprarPage() {
             </a>
             <Link
               href="/alquilar"
-              className="bg-[#1D9E75] text-white font-bold px-6 py-3 rounded-full hover:bg-[#0F6E56] transition-colors text-sm"
+              className="bg-[#1A1A1A] text-white font-bold px-6 py-3 rounded-full hover:bg-[#3D3D3D] transition-colors text-sm"
             >
               Ver alquileres →
             </Link>

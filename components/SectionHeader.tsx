@@ -22,24 +22,24 @@ export default function SectionHeader({
   return (
     <div className={`flex flex-col gap-2 ${centered ? "items-center text-center" : ""}`}>
       {eyebrow && (
-        <span className="text-xs font-semibold tracking-widest uppercase text-[#1D9E75]">
+        <span className="text-xs font-semibold tracking-widest uppercase text-[#F5A623]">
           {eyebrow}
         </span>
       )}
       <div className="flex items-end justify-between gap-4 flex-wrap">
         <h2
-          className="text-3xl md:text-4xl font-bold text-[#1a1a1a] leading-tight"
+          className="text-3xl md:text-4xl font-bold text-[#1a1a1a] leading-tight tracking-tight"
           style={{ fontFamily: "var(--font-fraunces)" }}
         >
           {title}{" "}
           {titleItalic && (
-            <em className="text-[#1D9E75] not-italic font-light">{titleItalic}</em>
+            <em className="text-[#F5A623] not-italic font-light">{titleItalic}</em>
           )}
         </h2>
         {viewAllHref && !centered && (
           <Link
             href={viewAllHref}
-            className="text-sm font-semibold text-[#1D9E75] hover:text-[#0F6E56] transition-colors shrink-0"
+            className="text-sm font-semibold text-[#F5A623] hover:text-[#E08B00] transition-colors shrink-0"
           >
             {viewAllLabel} →
           </Link>
@@ -51,7 +51,7 @@ export default function SectionHeader({
       {viewAllHref && centered && (
         <Link
           href={viewAllHref}
-          className="text-sm font-semibold text-[#1D9E75] hover:text-[#0F6E56] transition-colors mt-1"
+          className="text-sm font-semibold text-[#F5A623] hover:text-[#E08B00] transition-colors mt-1"
         >
           {viewAllLabel} →
         </Link>

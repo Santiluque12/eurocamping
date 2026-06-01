@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import {
   ShoppingBag,
   Package,
@@ -31,8 +30,8 @@ const needCards = [
     title: "Comprar nuevo",
     description: "Equipamento de primera marca con la mejor atención especializada.",
     href: "/comprar",
-    accentColor: "#4a7012",
-    accentBg: "#EAF3DE",
+    accentColor: "#F5A623",
+    accentBg: "#FFF3DC",
   },
   {
     icon: Package,
@@ -55,8 +54,8 @@ const needCards = [
     title: "Reparar",
     description: "El taller especializado en outdoor más completo del país. Más de 60 años de experiencia.",
     href: "/taller",
-    accentColor: "#1D9E75",
-    accentBg: "#E1F5EE",
+    accentColor: "#3D3D3D",
+    accentBg: "#F0F0F0",
   },
 ];
 
@@ -67,34 +66,26 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[#085041]">
-        <Image
-          src="/images/hero/home.jpg"
-          alt="Paisaje patagónico"
-          fill
-          className="object-cover opacity-30"
-          priority
-          sizes="100vw"
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section className="min-h-[85vh] flex items-center bg-[#1A1A1A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="max-w-2xl">
             <motion.p
-              className="text-xs font-bold tracking-widest uppercase text-[#6EDBB5] mb-4"
+              className="text-xs font-bold tracking-widest uppercase text-[#F5A623] mb-4"
               {...fadeUpProps(0)}
             >
               Eurocamping · Desde 1965
             </motion.p>
             <motion.h1
-              className="text-5xl md:text-7xl font-bold text-white leading-tight"
+              className="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight"
               style={{ fontFamily: "var(--font-fraunces)" }}
               {...fadeUpProps(0.12)}
             >
               Todo el outdoor
               <br />
-              <em className="text-[#6EDBB5] italic font-light">en un solo lugar.</em>
+              <em className="text-[#F5A623] not-italic font-light">en un solo lugar</em>
             </motion.h1>
             <motion.p
-              className="mt-6 text-lg text-white/85 leading-relaxed max-w-lg"
+              className="mt-6 text-lg text-white/75 leading-relaxed max-w-lg"
               {...fadeUpProps(0.24)}
             >
               Equipamento nuevo y usado, alquiler para tu próxima aventura, y el
@@ -106,7 +97,7 @@ export default function HomePage() {
             >
               <Link
                 href="/comprar"
-                className="bg-[#1D9E75] text-white font-semibold px-6 py-3.5 rounded-full hover:bg-[#0F6E56] transition-colors"
+                className="bg-[#F5A623] text-[#1A1A1A] font-semibold px-6 py-3.5 rounded-full hover:bg-[#E08B00] transition-colors"
               >
                 Ver productos
               </Link>
@@ -176,23 +167,23 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Rental */}
-            <div className="bg-[#E1F5EE] rounded-3xl p-8 md:p-10 flex flex-col gap-5">
-              <span className="text-xs font-bold tracking-widest uppercase text-[#0F6E56]">
+            <div className="bg-[#1A1A1A] rounded-3xl p-8 md:p-10 flex flex-col gap-5">
+              <span className="text-xs font-bold tracking-widest uppercase text-[#F5A623]">
                 ECOrental
               </span>
               <h2
-                className="text-3xl md:text-4xl font-bold text-[#085041] leading-tight"
+                className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight"
                 style={{ fontFamily: "var(--font-fraunces)" }}
               >
                 Alquilá sin
                 <br />
-                <em className="font-light italic">complicaciones.</em>
+                <em className="font-light not-italic text-[#F5A623]">complicaciones</em>
               </h2>
-              <p className="text-[#0F6E56] leading-relaxed">
+              <p className="text-white/70 leading-relaxed">
                 Kayaks, carpas, skis, snowboards, indumentaria y más. Modelos
                 actualizados cada temporada. Entrega en destino disponible.
               </p>
-              <ul className="space-y-1.5 text-sm text-[#0F6E56]">
+              <ul className="space-y-1.5 text-sm text-white/60">
                 <li>✓ 20% de descuento pagando con 30 días de anticipación</li>
                 <li>✓ Cambios ilimitados durante el período de alquiler</li>
                 <li>✓ Soporte del taller propio incluido</li>
@@ -202,7 +193,7 @@ export default function HomePage() {
                 href={WA_LINKS.rental}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 w-fit bg-[#1D9E75] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#0F6E56] transition-colors"
+                className="flex items-center gap-2 w-fit bg-[#F5A623] text-[#1A1A1A] font-semibold px-6 py-3 rounded-full hover:bg-[#E08B00] transition-colors"
               >
                 <MessageCircle size={18} />
                 Ver disponibilidad
@@ -210,23 +201,23 @@ export default function HomePage() {
             </div>
 
             {/* Taller */}
-            <div className="bg-[#EAF3DE] rounded-3xl p-8 md:p-10 flex flex-col gap-5">
-              <span className="text-xs font-bold tracking-widest uppercase text-[#3a5a0a]">
+            <div className="bg-[#F0F0F0] rounded-3xl p-8 md:p-10 flex flex-col gap-5">
+              <span className="text-xs font-bold tracking-widest uppercase text-[#3D3D3D]">
                 Taller ECO
               </span>
               <h2
-                className="text-3xl md:text-4xl font-bold text-[#3a5a0a] leading-tight"
+                className="text-3xl md:text-4xl font-bold text-[#1A1A1A] leading-tight tracking-tight"
                 style={{ fontFamily: "var(--font-fraunces)" }}
               >
                 Más de 60 años
                 <br />
-                <em className="font-light italic">reparando aventuras.</em>
+                <em className="font-light not-italic text-[#3D3D3D]">reparando aventuras</em>
               </h2>
-              <p className="text-[#4a7012] leading-relaxed">
+              <p className="text-[#4A4A4A] leading-relaxed">
                 Carpas, bolsas de dormir, mochilas, calzado outdoor, tablas de
                 ski y más. Trabajo especializado con piezas originales.
               </p>
-              <ul className="space-y-1.5 text-sm text-[#4a7012]">
+              <ul className="space-y-1.5 text-sm text-[#4A4A4A]">
                 <li>✓ Recepción y entrega en sucursal Martínez (La Paz 830)</li>
                 <li>✓ 20% OFF pagando en efectivo (Nov–Abr)</li>
                 <li>✓ Servicio express disponible</li>
@@ -236,7 +227,7 @@ export default function HomePage() {
                 href={WA_LINKS.taller}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 w-fit bg-[#639922] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#4a7012] transition-colors"
+                className="flex items-center gap-2 w-fit bg-[#1A1A1A] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#3D3D3D] transition-colors"
               >
                 <MessageCircle size={18} />
                 Pedir turno
@@ -252,7 +243,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Contenido ECO"
             title="Trips, tips y"
-            titleItalic="aventuras reales."
+            titleItalic="aventuras reales"
             description="Historias de personas reales en la naturaleza. Sin filtros ni estudios."
             viewAllHref="/contenido"
           />

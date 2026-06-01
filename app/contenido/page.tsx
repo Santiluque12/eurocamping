@@ -18,12 +18,12 @@ export default function ContenidoPage() {
       <section className="bg-[#f9fafb] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1
-            className="text-5xl md:text-6xl font-bold text-[#1a1a1a] leading-tight mb-4"
+            className="text-5xl md:text-6xl font-bold text-[#1a1a1a] leading-tight mb-4 tracking-tight"
             style={{ fontFamily: "var(--font-fraunces)" }}
           >
             Trips, tips y
             <br />
-            <em className="text-[#1D9E75] italic font-light">aventuras reales.</em>
+            <em className="text-[#F5A623] not-italic font-light">aventuras reales</em>
           </h1>
           <p className="text-lg text-[#6b7280] max-w-xl">
             Historias de personas reales en la naturaleza. Sin filtros, sin estudios.
@@ -37,7 +37,7 @@ export default function ContenidoPage() {
             <SectionHeader
               eyebrow="ECOtrips"
               title="Aventuras para"
-              titleItalic="inspirarse."
+              titleItalic="inspirarse"
               description="Rutas, logística y lo que necesitás saber para tu próxima expedición."
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
@@ -55,7 +55,7 @@ export default function ContenidoPage() {
             <SectionHeader
               eyebrow="ECOtips"
               title="Consejos para"
-              titleItalic="equiparte mejor."
+              titleItalic="equiparte mejor"
               description="Guías prácticas escritas por personas que usan el equipo en campo real."
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">

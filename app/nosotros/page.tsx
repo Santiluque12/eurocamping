@@ -14,20 +14,20 @@ export default function NosotrosPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#f9fafb] py-20">
+      <section className="bg-[#1A1A1A] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#1D9E75] mb-3">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#F5A623] mb-3">
             Desde 1965
           </p>
           <h1
-            className="text-5xl md:text-6xl font-bold text-[#1a1a1a] leading-tight mb-6"
+            className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6 tracking-tight"
             style={{ fontFamily: "var(--font-fraunces)" }}
           >
             Somos el outdoor
             <br />
-            <em className="text-[#1D9E75] italic font-light">de Argentina.</em>
+            <em className="text-[#F5A623] not-italic font-light">de Argentina</em>
           </h1>
-          <p className="text-lg text-[#6b7280] leading-relaxed max-w-2xl">
+          <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
             Eurocamping nació en 1965 como una pequeña tienda de equipamiento
             outdoor en Buenos Aires. Hoy somos la referencia del outdoor
             argentino: tienda, rental, taller y comunidad en un solo lugar.
@@ -43,7 +43,7 @@ export default function NosotrosPage() {
               <SectionHeader
                 eyebrow="Nuestra historia"
                 title="60 años en"
-                titleItalic="la naturaleza."
+                titleItalic="la naturaleza"
               />
               <div className="mt-6 space-y-4 text-[#6b7280] leading-relaxed">
                 <p>
@@ -73,15 +73,15 @@ export default function NosotrosPage() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-[#E1F5EE] rounded-2xl p-6 text-center"
+                  className="bg-[#FFF3DC] rounded-2xl p-6 text-center"
                 >
                   <p
-                    className="text-4xl font-bold text-[#1D9E75]"
+                    className="text-4xl font-bold text-[#F5A623] tracking-tight"
                     style={{ fontFamily: "var(--font-fraunces)" }}
                   >
                     {stat.num}
                   </p>
-                  <p className="text-sm text-[#0F6E56] mt-1">{stat.label}</p>
+                  <p className="text-sm text-[#7A5A00] mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -95,7 +95,7 @@ export default function NosotrosPage() {
           <SectionHeader
             eyebrow="Dónde encontrarnos"
             title="Sucursales en"
-            titleItalic="todo el país."
+            titleItalic="todo el país"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
             {sucursales.map((suc) => (
@@ -105,26 +105,26 @@ export default function NosotrosPage() {
               >
                 <div>
                   <p
-                    className="font-bold text-[#1a1a1a]"
+                    className="font-bold text-[#1a1a1a] tracking-tight"
                     style={{ fontFamily: "var(--font-fraunces)" }}
                   >
                     {suc.name}
                   </p>
-                  <p className="text-sm text-[#1D9E75] font-medium">{suc.city}</p>
+                  <p className="text-sm text-[#F5A623] font-medium">{suc.city}</p>
                 </div>
                 {suc.address && (
                   <div className="flex items-start gap-2 text-sm text-[#6b7280]">
-                    <MapPin size={14} className="mt-0.5 shrink-0 text-[#1D9E75]" />
+                    <MapPin size={14} className="mt-0.5 shrink-0 text-[#F5A623]" />
                     {suc.address}
                   </div>
                 )}
                 <div className="flex items-center gap-2 text-sm text-[#6b7280]">
-                  <Phone size={14} className="shrink-0 text-[#1D9E75]" />
+                  <Phone size={14} className="shrink-0 text-[#F5A623]" />
                   {suc.phone}
                 </div>
                 {suc.hours && (
                   <div className="flex items-start gap-2 text-sm text-[#6b7280]">
-                    <Clock size={14} className="mt-0.5 shrink-0 text-[#1D9E75]" />
+                    <Clock size={14} className="mt-0.5 shrink-0 text-[#F5A623]" />
                     {suc.hours}
                   </div>
                 )}
@@ -140,7 +140,7 @@ export default function NosotrosPage() {
           <SectionHeader
             eyebrow="Marcas representadas"
             title="Las mejores marcas,"
-            titleItalic="todas acá."
+            titleItalic="todas acá"
             description="Trabajamos con las marcas más reconocidas del outdoor mundial."
           />
           <div className="flex flex-wrap gap-3 mt-10">

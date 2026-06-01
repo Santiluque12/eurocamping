@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Fraunces, DM_Sans } from "next/font/google";
+import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloating from "@/components/WhatsAppFloating";
 
-const fraunces = Fraunces({
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
   variable: "--font-fraunces",
   display: "swap",
-  weight: ["300", "400", "700"],
-  style: ["normal", "italic"],
+  weight: ["600", "700", "800", "900"],
 });
 
 const dmSans = DM_Sans({
@@ -48,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${fraunces.variable} ${dmSans.variable}`}>
+    <html lang="es" className={`${barlowCondensed.variable} ${dmSans.variable}`}>
       <body suppressHydrationWarning className="min-h-screen flex flex-col bg-white text-[#1a1a1a]">
         <Navbar />
         <main className="flex-1">{children}</main>

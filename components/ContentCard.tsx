@@ -7,7 +7,7 @@ import { Clock } from "lucide-react";
 import type { Post } from "@/types";
 
 const categoryStyle: Record<Post["category"], { bg: string; text: string }> = {
-  ECOtrip: { bg: "#E1F5EE", text: "#0F6E56" },
+  ECOtrip: { bg: "#FFF3DC", text: "#E08B00" },
   ECOtip: { bg: "#E6F1FB", text: "#2563A8" },
 };
 
@@ -48,7 +48,7 @@ export default function ContentCard({ post }: ContentCardProps) {
             </span>
           </div>
           <h3
-            className="text-xl font-bold text-[#1a1a1a] leading-snug group-hover:text-[#1D9E75] transition-colors"
+            className="text-xl font-bold text-[#1a1a1a] leading-snug group-hover:text-[#F5A623] transition-colors tracking-tight"
             style={{ fontFamily: "var(--font-fraunces)" }}
           >
             {post.title}
