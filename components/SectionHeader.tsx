@@ -8,6 +8,7 @@ interface SectionHeaderProps {
   viewAllHref?: string;
   viewAllLabel?: string;
   centered?: boolean;
+  dark?: boolean;
 }
 
 export default function SectionHeader({
@@ -18,6 +19,7 @@ export default function SectionHeader({
   viewAllHref,
   viewAllLabel = "Ver todo",
   centered = false,
+  dark = false,
 }: SectionHeaderProps) {
   return (
     <div className={`flex flex-col gap-2 ${centered ? "items-center text-center" : ""}`}>
@@ -28,7 +30,7 @@ export default function SectionHeader({
       )}
       <div className="flex items-end justify-between gap-4 flex-wrap">
         <h2
-          className="text-3xl md:text-4xl font-bold text-[#1a1a1a] leading-tight tracking-tight"
+          className={`text-3xl md:text-4xl font-bold leading-tight tracking-tight ${dark ? "text-white" : "text-[#1a1a1a]"}`}
           style={{ fontFamily: "var(--font-fraunces)" }}
         >
           {title}{" "}
@@ -46,7 +48,7 @@ export default function SectionHeader({
         )}
       </div>
       {description && (
-        <p className="text-[#374151] text-base leading-relaxed max-w-xl">{description}</p>
+        <p className={`text-base leading-relaxed max-w-xl ${dark ? "text-white/70" : "text-[#374151]"}`}>{description}</p>
       )}
       {viewAllHref && centered && (
         <Link

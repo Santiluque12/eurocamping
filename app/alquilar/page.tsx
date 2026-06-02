@@ -160,10 +160,10 @@ const ventajas = [
 
 function PriceTable({ items, headers }: { items: PrecioItem[]; headers: string[] }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-[#2a2a2a] bg-[#1A1A1A]">
+    <div className="overflow-x-auto rounded-xl border border-[#243d37] bg-[#182B26]">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-[#1A1A1A] border-b border-[#F5A623]/20">
+          <tr className="bg-[#111f1b] border-b border-[#F5A623]/20">
             <th className="text-left py-3 px-5 font-semibold text-white/40 min-w-[220px] uppercase tracking-wider text-xs">
               Equipo
             </th>
@@ -177,10 +177,10 @@ function PriceTable({ items, headers }: { items: PrecioItem[]; headers: string[]
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-[#2a2a2a]">
+        <tbody className="divide-y divide-[#243d37]">
           {items.map((item) => (
-            <tr key={item.name} className="bg-[#1A1A1A] hover:bg-[#F5A623]/5 transition-colors">
-              <td className="py-3 px-5 text-white/80">{item.name}</td>
+            <tr key={item.name} className="bg-[#182B26] hover:bg-white/5 transition-colors">
+              <td className="py-3 px-5 text-white font-bold uppercase text-xs tracking-wide">{item.name}</td>
               {item.precios.map((p, i) => (
                 <td
                   key={i}
