@@ -7,10 +7,12 @@ import { Menu, X, MessageCircle } from "lucide-react";
 import { WA_LINKS } from "@/lib/data";
 
 const navLinks = [
+  { label: "Nosotros", href: "/nosotros" },
   { label: "Alquilar", href: "/alquilar" },
   { label: "Comprar", href: "/comprar" },
   { label: "Trips & Tips", href: "/contenido" },
   { label: "Taller", href: "/taller" },
+  { label: "Sucursales", href: "/sucursales" },
 ];
 
 export default function Navbar() {
@@ -46,18 +48,6 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Link
-            href="/sucursales"
-            className="text-sm font-medium text-[#6b7280] hover:text-[#1a1a1a] transition-colors"
-          >
-            Sucursales
-          </Link>
-          <Link
-            href="/nosotros"
-            className="text-sm font-medium text-[#6b7280] hover:text-[#1a1a1a] transition-colors"
-          >
-            Nosotros
-          </Link>
           <a
             href={WA_LINKS.general}
             target="_blank"
@@ -93,14 +83,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/nosotros"
-            onClick={() => setOpen(false)}
-            className="text-2xl font-bold text-[#1a1a1a] py-2 border-b border-[#e5e7eb] tracking-tight"
-            style={{ fontFamily: "var(--font-fraunces)" }}
-          >
-            Nosotros
-          </Link>
           <a
             href={WA_LINKS.general}
             target="_blank"
