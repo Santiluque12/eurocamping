@@ -160,17 +160,17 @@ const ventajas = [
 
 function PriceTable({ items, headers }: { items: PrecioItem[]; headers: string[] }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-[#333] bg-[#1A1A1A]">
+    <div className="overflow-x-auto rounded-xl border border-[#2a2a2a] bg-[#1A1A1A]">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-[#242424] border-b border-[#333]">
-            <th className="text-left py-3 px-5 font-semibold text-white/60 min-w-[220px]">
+          <tr className="bg-[#1A1A1A] border-b border-[#F5A623]/20">
+            <th className="text-left py-3 px-5 font-semibold text-white/40 min-w-[220px] uppercase tracking-wider text-xs">
               Equipo
             </th>
             {headers.map((h) => (
               <th
                 key={h}
-                className="text-center py-3 px-4 font-semibold text-[#F5A623] whitespace-nowrap"
+                className="text-center py-3 px-4 font-semibold text-[#F5A623] whitespace-nowrap uppercase tracking-wider text-xs"
               >
                 {h}
               </th>
@@ -179,7 +179,7 @@ function PriceTable({ items, headers }: { items: PrecioItem[]; headers: string[]
         </thead>
         <tbody className="divide-y divide-[#2a2a2a]">
           {items.map((item) => (
-            <tr key={item.name} className="hover:bg-[#222] transition-colors">
+            <tr key={item.name} className="bg-[#1A1A1A] hover:bg-[#F5A623]/5 transition-colors">
               <td className="py-3 px-5 text-white/80">{item.name}</td>
               {item.precios.map((p, i) => (
                 <td

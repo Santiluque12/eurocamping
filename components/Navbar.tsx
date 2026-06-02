@@ -47,6 +47,12 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <Link
+            href="/sucursales"
+            className="text-sm font-medium text-[#6b7280] hover:text-[#1a1a1a] transition-colors"
+          >
+            Sucursales
+          </Link>
+          <Link
             href="/nosotros"
             className="text-sm font-medium text-[#6b7280] hover:text-[#1a1a1a] transition-colors"
           >

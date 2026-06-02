@@ -118,10 +118,12 @@ export default function NosotrosPage() {
                     {suc.address}
                   </div>
                 )}
-                <div className="flex items-center gap-2 text-sm text-[#6b7280]">
-                  <Phone size={14} className="shrink-0 text-[#F5A623]" />
-                  {suc.phone}
-                </div>
+                {suc.phone && (
+                  <div className="flex items-center gap-2 text-sm text-[#6b7280]">
+                    <Phone size={14} className="shrink-0 text-[#F5A623]" />
+                    {suc.phone}
+                  </div>
+                )}
                 {suc.hours && (
                   <div className="flex items-start gap-2 text-sm text-[#6b7280]">
                     <Clock size={14} className="mt-0.5 shrink-0 text-[#F5A623]" />

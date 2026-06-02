@@ -26,9 +26,15 @@ export interface Post {
 export interface Sucursal {
   name: string;
   city: string;
+  region?: string;
   address?: string;
-  phone: string;
+  phone?: string;
+  whatsapp?: string;
   hours?: string;
+  maps?: string;
+  rental?: boolean;
+  seasonal?: string;
+  note?: string;
 }
 
 export interface RentalItem {

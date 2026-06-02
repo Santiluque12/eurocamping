@@ -39,7 +39,7 @@ const footerLinks = {
   Servicios: [
     { label: "Alquiler / Rental", href: "/alquilar" },
     { label: "Taller ECO", href: "/taller" },
-    { label: "Sucursales", href: "/nosotros#sucursales" },
+    { label: "Sucursales", href: "/sucursales" },
   ],
   Empresa: [
     { label: "Quiénes somos", href: "/nosotros" },
