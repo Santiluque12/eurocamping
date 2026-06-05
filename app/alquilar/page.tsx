@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Check, Info, MapPin, Grid2x2 } from "lucide-react";
+import { MessageCircle, Check, Info, MapPin, Grid2x2, ArrowUpRight } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import { WA_LINKS } from "@/lib/data";
 
@@ -186,9 +186,10 @@ function PriceTable({ items, headers }: { items: PrecioItem[]; headers: string[]
                 {item.catalogId ? (
                   <Link
                     href={`/alquilar/catalogo#${item.catalogId}`}
-                    className="hover:text-[#F5A623] transition-colors underline underline-offset-2 decoration-white/20 hover:decoration-[#F5A623]"
+                    className="inline-flex items-center gap-1.5 hover:text-[#F5A623] transition-colors underline underline-offset-2 decoration-white/20 hover:decoration-[#F5A623]"
                   >
                     {item.name}
+                    <ArrowUpRight size={11} className="shrink-0 opacity-50" />
                   </Link>
                 ) : (
                   item.name
