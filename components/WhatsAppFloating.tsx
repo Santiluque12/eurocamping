@@ -1,12 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { WA_LINKS } from "@/lib/data";
 
-export default function WhatsAppFloating() {
+export default function WhatsAppFloating({ href }: { href: string }) {
   return (
     <motion.a
-      href={WA_LINKS.general}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"

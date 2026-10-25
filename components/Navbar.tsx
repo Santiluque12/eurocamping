@@ -4,18 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
-import { WA_LINKS } from "@/lib/data";
 
 const navLinks = [
   { label: "Nosotros", href: "/nosotros" },
   { label: "Alquilar", href: "/alquilar" },
-  { label: "Comprar", href: "/comprar" },
+  // { label: "Comprar", href: "/comprar" }, // oculto temporalmente
   { label: "Trips & Tips", href: "/contenido" },
   { label: "Taller", href: "/taller" },
   { label: "Sucursales", href: "/sucursales" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ waLink }: { waLink: string | null }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -48,15 +47,15 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href={WA_LINKS.general}
+          {waLink && <a
+            href={waLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#F5A623] text-[#1A1A1A] text-sm font-semibold px-4 py-2 rounded-full hover:bg-[#E08B00] transition-colors"
           >
             <MessageCircle size={16} />
             Escribinos
-          </a>
+          </a>}
         </div>
 
         {/* Mobile hamburger */}
@@ -83,15 +82,17 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a
-            href={WA_LINKS.general}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-[#F5A623] text-[#1A1A1A] text-lg font-semibold px-6 py-4 rounded-full mt-4"
-          >
-            <MessageCircle size={20} />
-            Escribinos por WhatsApp
-          </a>
+          {waLink && (
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-[#F5A623] text-[#1A1A1A] text-lg font-semibold px-6 py-4 rounded-full mt-4"
+            >
+              <MessageCircle size={20} />
+              Escribinos por WhatsApp
+            </a>
+          )}
         </div>
       )}
     </header>

@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
+import { NEED_ICON_COMPONENTS } from "@/components/NeedIcon";
+import type { NeedIcon } from "@/lib/settings/icons";
 
 interface NeedCardProps {
-  icon: LucideIcon;
+  icon: NeedIcon;
   title: string;
   description: string;
   href: string;
@@ -14,13 +15,14 @@ interface NeedCardProps {
 }
 
 export default function NeedCard({
-  icon: Icon,
+  icon,
   title,
   description,
   href,
   accentColor = "#F5A623",
   accentBg = "#FFF3DC",
 }: NeedCardProps) {
+  const Icon = NEED_ICON_COMPONENTS[icon] ?? NEED_ICON_COMPONENTS.Tent;
   return (
     <motion.div
       whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.08)" }}

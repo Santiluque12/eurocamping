@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Clock } from "lucide-react";
+import { Clock, ImageOff } from "lucide-react";
 import type { Post } from "@/types";
 
 const categoryStyle: Record<Post["category"], { bg: string; text: string }> = {
@@ -26,13 +26,19 @@ export default function ContentCard({ post }: ContentCardProps) {
     >
       <Link href={`/contenido/${post.slug}`} className="block">
         <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-[#f9fafb] mb-4">
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
+          {post.image ? (
+            <Image
+              src={post.image.url}
+              alt={post.image.alt}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center text-[#d1d5db]">
+              <ImageOff size={32} aria-hidden />
+            </div>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-3">

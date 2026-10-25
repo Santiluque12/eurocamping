@@ -1,10 +1,8 @@
-import { WA_LINKS } from "@/lib/data";
-
 interface WhatsAppBannerProps {
-  title?: string;
-  subtitle?: string;
-  waLink?: string;
-  buttonLabel?: string;
+  title: string;
+  subtitle: string;
+  waLink: string;
+  buttonLabel: string;
 }
 
 function WhatsAppIcon() {
@@ -16,10 +14,10 @@ function WhatsAppIcon() {
 }
 
 export default function WhatsAppBanner({
-  title = "Hablá con nosotros",
-  subtitle = "Respondemos en minutos · Lun a Vie 11–18hs · Sáb 10–13hs",
-  waLink = WA_LINKS.general,
-  buttonLabel = "Escribir por WhatsApp",
+  title,
+  subtitle,
+  waLink,
+  buttonLabel,
 }: WhatsAppBannerProps) {
   return (
     <section id="whatsapp" className="bg-[#FFF3DC] py-12">

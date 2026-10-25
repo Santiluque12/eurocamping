@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail } from "lucide-react";
+import type { SettingsValue } from "@/lib/settings/spec";
 
 function InstagramIcon() {
   return (
@@ -32,8 +33,8 @@ const footerLinks = {
     { label: "ECOtips", href: "/contenido" },
   ],
   Tienda: [
-    { label: "Productos nuevos", href: "/comprar" },
-    { label: "Equipos usados", href: "/comprar/usados" },
+    // { label: "Productos nuevos", href: "/comprar" }, // oculto temporalmente
+    // { label: "Equipos usados", href: "/comprar/usados" }, // oculto temporalmente
     { label: "Marcas", href: "/marcas" },
   ],
   Servicios: [
@@ -47,7 +48,16 @@ const footerLinks = {
   ],
 };
 
-export default function Footer() {
+export default function Footer({ settings }: { settings: SettingsValue<"general"> | null }) {
+  const social = settings
+    ? [
+        { href: settings.social.instagram, label: "Instagram", icon: <InstagramIcon /> },
+        { href: settings.social.facebook, label: "Facebook", icon: <FacebookIcon /> },
+        { href: settings.social.youtube, label: "YouTube", icon: <YoutubeIcon /> },
+        { href: settings.contact.email && `mailto:${settings.contact.email}`, label: "Email", icon: <Mail size={20} /> },
+      ].filter((s) => s.href)
+    : [];
+
   return (
     <footer className="bg-[#1A1A1A] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -63,47 +73,26 @@ export default function Footer() {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="mt-3 text-sm text-white/60 leading-relaxed">
-              Todo el outdoor en un solo lugar.
-              <br />
-              Desde 1965.
-            </p>
-            <div className="flex gap-4 mt-5">
-              <a
-                href="https://www.instagram.com/eurocamping"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-white/60 hover:text-[#F5A623] transition-colors"
-              >
-                <InstagramIcon />
-              </a>
-              <a
-                href="https://www.facebook.com/eurocamping"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-white/60 hover:text-[#F5A623] transition-colors"
-              >
-                <FacebookIcon />
-              </a>
-              <a
-                href="https://www.youtube.com/@eurocamping"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="text-white/60 hover:text-[#F5A623] transition-colors"
-              >
-                <YoutubeIcon />
-              </a>
-              <a
-                href="mailto:info@eurocampingonline.com.ar"
-                aria-label="Email"
-                className="text-white/60 hover:text-[#F5A623] transition-colors"
-              >
-                <Mail size={20} />
-              </a>
-            </div>
+            {settings?.footer.tagline && (
+              <p className="mt-3 text-sm text-white/60 leading-relaxed whitespace-pre-line">
+                {settings.footer.tagline}
+              </p>
+            )}
+            {social.length > 0 && (
+              <div className="flex gap-4 mt-5">
+                {social.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    {...(s.label === "Email" ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                    aria-label={s.label}
+                    className="text-white/60 hover:text-[#F5A623] transition-colors"
+                  >
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Links */}
@@ -114,7 +103,7 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 {links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-sm text-white/70 hover:text-white transition-colors"
@@ -130,7 +119,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
           <p>© {new Date().getFullYear()} Eurocamping. Todos los derechos reservados.</p>
-          <p>Buenos Aires · Argentina</p>
+          {settings?.footer.location && <p>{settings.footer.location}</p>}
         </div>
       </div>
     </footer>

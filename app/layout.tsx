@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import WhatsAppFloating from "@/components/WhatsAppFloating";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
@@ -49,10 +46,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${barlowCondensed.variable} ${dmSans.variable}`}>
       <body suppressHydrationWarning className="min-h-screen flex flex-col bg-white text-[#1a1a1a]">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppFloating />
+        {children}
       </body>
     </html>
   );
