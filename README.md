@@ -117,6 +117,19 @@ marcas, categorías, actividades y textos de cada página. Cada registro tiene u
 estable (slug o `legacy_key`) y se inserta sólo si no existe: repetirlo **no duplica ni
 pisa** lo que se haya editado después en el panel.
 
+## Copiar imágenes externas a Storage
+
+Algunas fotos importadas se muestran desde el sitio viejo (`www.eurocampingonline.com.ar`).
+`npm run media:migrate` las descarga, valida (tipo y ≤ 5 MB) y las sube a
+`legacy/externas/` del bucket, actualizando la misma fila de `media` (los productos
+que las usan no cambian). Se puede repetir: sólo procesa las que siguen siendo externas;
+el importador reconoce las ya copiadas y no las duplica.
+
+```bash
+ENV_FILE=.env.supabase-prod npm run media:migrate -- --dry-run   # revisar
+ENV_FILE=.env.supabase-prod npm run media:migrate                # copiar
+```
+
 ## Seguridad (resumen)
 
 - Sin registro público. Sólo pueden administrar las cuentas listadas y activas en

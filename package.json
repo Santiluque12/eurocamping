@@ -11,7 +11,8 @@
     "db:reset": "supabase db reset",
     "db:types": "supabase gen types typescript --local --schema public > lib/supabase/database.types.ts",
     "db:import": "tsx scripts/import-legacy.ts",
-    "admin:create": "tsx scripts/create-admin.ts"
+    "admin:create": "tsx scripts/create-admin.ts",
+    "media:migrate": "tsx scripts/migrate-external-images.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

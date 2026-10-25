@@ -18,6 +18,7 @@ import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "../lib/supabase/database.types";
 import { slugify } from "../lib/format";
+import { externalStorageBase } from "./external-media";
 import { settingsSchema, SETTINGS_KEYS } from "../lib/settings/spec";
 import * as site from "./legacy/site";
 import { catalogCategories } from "./legacy/catalog";
@@ -158,7 +159,14 @@ async function ensureMedia(ref: string, alt: string): Promise<string> {
 }
 
 async function ensureMediaExternal(ref: string, alt: string) {
-  const existing = mayBe(await db.from("media").select("id").eq("external_url", ref).maybeSingle(), "leer media");
+  let existing = mayBe(await db.from("media").select("id").eq("external_url", ref).maybeSingle(), "leer media");
+  // ¿Ya se copió a Storage con `npm run media:migrate`?
+  if (!existing && /^https:\/\//.test(ref)) {
+    existing = mayBe(
+      await db.from("media").select("id").like("storage_path", `${externalStorageBase(ref)}.%`).limit(1).maybeSingle(),
+      "leer media"
+    );
+  }
   if (existing) {
     mediaIds.set(ref, existing.id);
     count("Imágenes", 0, 1);
